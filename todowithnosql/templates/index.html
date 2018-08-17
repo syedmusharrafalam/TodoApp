@@ -1,0 +1,39 @@
+
+
+
+{% block title %}Todo App{% endblock %}
+
+{% block page_content %}
+
+<div>
+    <form action="{{ url_for('addTodo') }}" method="POST">
+        <input type="text" name="title" >
+        <input type="text" name="description" >
+        <button type="submit" id='btn' onClick="window.location.reload()" >Add Todo</button>
+    </form>
+    <h1>Todo List</h1>
+
+<div>
+      
+    {%for tods in todo %}
+    <div style="background-color:darkgray">
+    
+    <h1 >Title: {{tods.title}} </h1>
+    <h1>Description: {{tods.description}} </h1>
+    
+    <button type="submit" ><a href="{{ url_for('delete', id=tods._id) }}" >Delete</a></button>
+    <button type="submit"><a href="{{ url_for('update', id=tods._id) }}"> Edit</a></button>
+  
+    </div>
+    <br />
+    
+    {% endfor %}
+
+ 
+   
+    </div>
+</div>    
+
+
+
+{% endblock %}

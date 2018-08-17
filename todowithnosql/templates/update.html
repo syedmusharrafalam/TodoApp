@@ -1,0 +1,15 @@
+{% block page_content %}
+
+<br />
+<div style="margin-left: 30%  ">    
+      <form action="{{url_for('edit',id=id)}}" method="POST">
+            <input type="text" name="title" required="required" >
+            <input type="text" name="desc" required="required" >
+            <button type="submit">Record Update</button>
+
+      </form> 
+
+</div>
+
+</html>
+{% endblock %}
